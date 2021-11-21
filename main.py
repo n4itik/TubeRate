@@ -135,7 +135,6 @@ def rating():
         comment_df = predict_rating_of_every_comment(comment_df)
 
         # Calculations regarding rating
-
         total = comment_df['Rating'].count()
         rating_counts = comment_df['Rating'].value_counts()
         rating_keys = rating_counts.index.tolist()
