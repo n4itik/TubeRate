@@ -140,27 +140,27 @@ def rating():
         rating_keys = rating_counts.index.tolist()
 
         if 5 in rating_keys:
-            five_rating = (rating_counts[5] / total) * 100
+            five_rating = round((rating_counts[5] / total) * 100)
         else:
             five_rating = 0
 
         if 4 in rating_keys:
-            four_rating = (rating_counts[4] / total) * 100
+            four_rating = round((rating_counts[4] / total) * 100)
         else:
             four_rating = 0
 
         if 3 in rating_keys:
-            three_rating = (rating_counts[3] / total) * 100
+            three_rating = round((rating_counts[3] / total) * 100)
         else:
             three_rating = 0
 
         if 2 in rating_keys:
-            two_rating = (rating_counts[2] / total) * 100
+            two_rating = round((rating_counts[2] / total) * 100)
         else:
             two_rating = 0
 
         if 1 in rating_keys:
-            one_rating = (rating_counts[1] / total) * 100
+            one_rating = round((rating_counts[1] / total) * 100)
         else:
             one_rating = 0
 
