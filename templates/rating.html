@@ -1,0 +1,72 @@
+{% include "header.html" %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li>Rating</li>
+            </ol>
+            <h2>Rating</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <div class="container">
+        <div class="row">
+            <div class="rating col-lg-6 col-sm-12 order-1 order-1 order-lg-1 aos-init aos-animate" data-aos="zoom-in">
+
+                <h1>{{ overall_rating }} ★</h1>
+                <div class="progress" style="height: 30px;">
+                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{ five_rating }}"
+                         aria-valuemin="0"
+                         aria-valuemax="100" style="width:{{ five_rating }}%">
+                        5 ✪ • {{ five_rating }}%
+                    </div>
+                </div>
+                <div class="progress" style="height: 30px;">
+                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="{{ four_rating }}"
+                         aria-valuemin="0"
+                         aria-valuemax="100" style="width:{{ four_rating }}%">
+                        4 ✪ • {{ four_rating }}%
+                    </div>
+                </div>
+                <div class="progress" style="height: 30px;">
+                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="{{ three_rating }}"
+                         aria-valuemin="0"
+                         aria-valuemax="100" style="width:{{ three_rating }}%">
+                        3 ✪ • {{ three_rating }}%
+                    </div>
+                </div>
+                <div class="progress" style="height: 30px;">
+                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{ two_rating }}"
+                         aria-valuemin="0"
+                         aria-valuemax="100" style="width:{{ two_rating }}%">
+                        2 ✪ • {{ two_rating }}%
+                    </div>
+                </div>
+                <div class="progress" style="height: 30px;">
+                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="{{ one_rating }}"
+                         aria-valuemin="0"
+                         aria-valuemax="100" style="width:{{ one_rating }}%">
+                        1 ✪ • {{ one_rating }}%
+                    </div>
+                </div>
+
+                {% if overall_profanity >= 20 %}
+                <h3 class="tag">NSFW</h3>
+                {% endif %}
+            </div>
+
+            <div class="col-lg-6 rating-img mt-2 mb-tg-0 order-2 order-lg-2" data-aos="fade-left">
+                <img src="static/assets/img/rating-img.png" class="img-fluid" alt="rating">
+            </div>
+        </div>
+    </div>
+
+</main><!-- End #main -->
+
+{% include "footer.html" %}

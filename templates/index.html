@@ -1,0 +1,84 @@
+{% include "header.html" %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+                 data-aos="fade-up">
+                <div class="input-group mb-3">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <p class="msg">{{ message }}</p>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    <div class="form">
+                        <form action="{{ url_for('rating') }}" method="post">
+                            <input name="videoURL" type="url" size="50" class="form-control"
+                                   placeholder="Paste your video link here"
+                                   aria-label="Paste your video link here" aria-describedby="button-addon2">
+                            <br>
+                            <button class="btn float-right" id="button-addon2" type="submit">Go</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+                <img src="static/assets/img/hero-img.png" class="img-fluid" alt="hero">
+            </div>
+        </div>
+    </div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-6 order-1 order-lg-1 aos-init aos-animate" data-aos="zoom-in">
+
+                    <figure>
+                        <img src="static/assets/img/about-img.png" alt="about" class="img-fluid">
+                    </figure>
+                </div>
+
+                <div class="col-lg-6 mt-2 mb-tg-0 order-2 order-lg-2">
+
+                    <h4>What is TubeRate ?</h4>
+                    <p>TubeRate allows the user to view ratings of YouTube videos which will be based on sentiment
+                        analysis performed on the comments of those videos. The app will extract comments from the
+                        video, process them using NLP and show
+                        ratings to the user based upon the emotions present in them. These ratings will be on a scale
+                        from 1 to 5, where 1 means extremely dissatisfied and 5 means extremely pleased with the content
+                        of the video.
+
+                    </p>
+
+                    <br>
+
+                    <h4>Why is it needed ?</h4>
+                    <p>Thousands of hours worth of content is being created and shared on YouTube throughout the day. It
+                        has become really difficult to spend time watching such videos which may have a longer duration
+                        than expected and sometimes our efforts
+                        may become futile if we couldn't find relevant information out of it. There are times when we
+                        are searching for something on YouTube and there are a lot of videos about it and we can’t just
+                        rely on the number of likes/dislikes a
+                        particular video has.
+
+                    </p>
+
+                </div>
+
+            </div>
+    </section><!-- End About Section -->
+
+</main><!-- End #main -->
+
+{% include "footer.html" %}
